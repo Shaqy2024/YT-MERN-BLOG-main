@@ -26,7 +26,7 @@ import { RouteBlog } from '@/helpers/RouteName'
 const AddBlog = () => {
     const navigate = useNavigate()
     const user = useSelector((state) => state.user)
-    const { data: categoryData, loading, error } = useFetch(`http://localhost:3000/api/category/all-category`, {
+    const { data: categoryData, loading, error } = useFetch(`https://yt-mern-blog-main.vercel.app/category/all-category`, {
         method: 'get',
         credentials: 'include'
     })
