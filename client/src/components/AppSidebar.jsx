@@ -23,7 +23,7 @@ import { useSelector } from "react-redux";
 
 const AppSidebar = () => {
     const user = useSelector(state => state.user)
-    const { data: categoryData } = useFetch(`http://localhost:3000/api/category/all-category`, {
+    const { data: categoryData } = useFetch(`${getEvn('VITE_API_BASE_URL')}/category/all-category`, {
         method: 'get',
         credentials: 'include'
     })

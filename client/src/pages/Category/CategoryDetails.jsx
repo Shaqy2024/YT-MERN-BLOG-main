@@ -22,13 +22,13 @@ import { showToast } from '@/helpers/showToast'
 
 const CategoryDetails = () => {
     const [refreshData, setRefreshData] = useState(false)
-    const { data: categoryData, loading, error } = useFetch(`http://localhost:3000/api/category/all-category`, {
+    const { data: categoryData, loading, error } = useFetch(`${getEvn('VITE_API_BASE_URL')}/category/all-category`, {
         method: 'get',
         credentials: 'include'
     }, [refreshData])
 
     const handleDelete = (id) => {
-        const response = deleteData(`http://localhost:3000/api/category/delete/${id}`)
+        const response = deleteData(`${getEvn('VITE_API_BASE_URL')}/category/delete/${id}`)
         if (response) {
             setRefreshData(!refreshData)
             showToast('success', 'Data deleted.')

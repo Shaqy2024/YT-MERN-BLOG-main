@@ -56,7 +56,7 @@ const EditCategory = () => {
 
     async function onSubmit(values) {
         try {
-            const response = await fetch(`http://localhost:3000/api/category/update/${category_id}`, {
+            const response = await fetch(`${getEvn('VITE_API_BASE_URL')}/category/update/${category_id}`, {
                 method: 'put',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(values)

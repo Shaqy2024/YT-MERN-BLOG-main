@@ -22,13 +22,13 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import moment from 'moment'
 const BlogDetails = () => {
     const [refreshData, setRefreshData] = useState(false)
-    const { data: blogData, loading, error } = useFetch(`http://localhost:3000/api/blog/get-all`, {
+    const { data: blogData, loading, error } = useFetch(`${getEvn('VITE_API_BASE_URL')}/blog/get-all`, {
         method: 'get',
         credentials: 'include'
     }, [refreshData])
 
     const handleDelete = (id) => {
-        const response = deleteData(`http://localhost:3000/api/blog/delete/${id}`)
+        const response = deleteData(`${getEvn('VITE_API_BASE_URL')}/blog/delete/${id}`)
         if (response) {
             setRefreshData(!refreshData)
             showToast('success', 'Data deleted.')

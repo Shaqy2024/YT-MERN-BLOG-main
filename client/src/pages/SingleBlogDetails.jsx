@@ -16,7 +16,7 @@ import { useParams } from 'react-router-dom'
 const SingleBlogDetails = () => {
     const { blog, category } = useParams()
 
-    const { data, loading, error } = useFetch(`http://localhost:3000/api/blog/get-blog/${blog}`, {
+    const { data, loading, error } = useFetch(`${getEvn('VITE_API_BASE_URL')}/blog/get-blog/${blog}`, {
         method: 'get',
         credentials: 'include',
     }, [blog, category])
