@@ -18,7 +18,7 @@ const app = express()
 app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "https://yt-mern-blog-main-4bgs.vercel.app",
     credentials: true
 }))
 
